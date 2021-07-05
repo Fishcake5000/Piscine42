@@ -1,0 +1,5 @@
+Credentials cache: API:D1FC3676-07E7-41FD-82A2-84BE5AAB19A4
+        Principal: marnaudy@42.FR
+
+  Issued                Expires               Principal
+Jun 28 11:53:52 2021  Jul  5 11:53:52 2021  krbtgt/42.FR@42.FR

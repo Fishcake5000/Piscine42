@@ -40,6 +40,7 @@ int main(int argc, char **argv)
 
 	begin = ft_list_push_strs(argc - 1, argv + 1);
 	ft_list_foreach(begin, &ft_putstr);
-	ft_list_sort(&begin, strcmp);
+	ft_list_reverse_fun(begin);
+	puts("");
 	ft_list_foreach(begin, &ft_putstr);
 }

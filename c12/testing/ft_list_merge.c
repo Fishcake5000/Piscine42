@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   ft_list_merge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 20:53:16 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 20:56:26 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/19 12:08:13 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/19 12:13:45 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
+void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 {
-	unsigned int	i;
+	t_list	*link;
 
-	i = 0;
-	while (i < nbr && begin_list)
+	if (!*begin_list1)
 	{
-		begin_list = begin_list->next;
-		i++;
+		*begin_list1 = begin_list2;
+		return ;
 	}
-	return (begin_list);
+	link = *begin_list1;
+	while (link->next)
+		link = link->next;
+	link->next = begin_list2;
 }

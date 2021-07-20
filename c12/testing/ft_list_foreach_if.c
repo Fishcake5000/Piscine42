@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   ft_list_foreach_if.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 20:53:16 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 20:56:26 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/19 10:19:40 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/19 10:23:35 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
+void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *),
+			void *data_ref, int(*cmp)())
 {
-	unsigned int	i;
-
-	i = 0;
-	while (i < nbr && begin_list)
+	while (begin_list)
 	{
+		if ((*cmp)(begin_list->data, data_ref) == 0)
+			(*f)(begin_list->data);
 		begin_list = begin_list->next;
-		i++;
 	}
-	return (begin_list);
 }

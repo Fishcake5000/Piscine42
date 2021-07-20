@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 20:53:16 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 20:56:26 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/19 09:58:20 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/19 10:14:13 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
+void	ft_list_reverse(t_list **begin_list)
 {
-	unsigned int	i;
+	t_list	*current;
+	t_list	*next;
+	t_list	*previous;
 
-	i = 0;
-	while (i < nbr && begin_list)
+	previous = 0;
+	current = *begin_list;
+	while (current)
 	{
-		begin_list = begin_list->next;
-		i++;
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
 	}
-	return (begin_list);
+	*begin_list = previous;
 }

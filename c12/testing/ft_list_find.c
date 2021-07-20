@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   ft_list_find.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 20:53:16 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 20:56:26 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/19 10:26:04 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/19 10:30:18 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
+t_list	*ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)())
 {
-	unsigned int	i;
-
-	i = 0;
-	while (i < nbr && begin_list)
-	{
+	while (begin_list && (*cmp)(begin_list->data, data_ref))
 		begin_list = begin_list->next;
-		i++;
-	}
 	return (begin_list);
 }

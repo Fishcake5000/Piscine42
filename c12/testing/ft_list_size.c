@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 20:53:16 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 20:56:26 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/18 20:00:59 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/18 20:03:15 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
+int	ft_list_size(t_list *begin_list)
 {
-	unsigned int	i;
+	int	count;
 
-	i = 0;
-	while (i < nbr && begin_list)
+	count = 0;
+	while (begin_list)
 	{
 		begin_list = begin_list->next;
-		i++;
+		count++;
 	}
-	return (begin_list);
+	return (count);
 }

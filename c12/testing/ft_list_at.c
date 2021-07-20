@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 19:44:35 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 19:53:08 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/18 20:53:16 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/18 20:56:26 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
-typedef struct s_list
+#include "ft_list.h"
+
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	struct s_list	*next;
-	void			*data;
-}	t_list;
-t_list	*ft_create_elem(void *data);
-#endif
+	unsigned int	i;
+
+	i = 0;
+	while (i < nbr && begin_list)
+	{
+		begin_list = begin_list->next;
+		i++;
+	}
+	return (begin_list);
+}

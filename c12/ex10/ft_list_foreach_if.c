@@ -6,7 +6,7 @@
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 10:19:40 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/19 10:23:35 by marnaudy         ###   ########.fr       */
+/*   Updated: 2021/07/21 20:21:10 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *),
 {
 	while (begin_list)
 	{
-		if ((*cmp)(list_ptr->data, data_ref) == 0)
-			(*f)(list_ptr->data);
+		if ((*cmp)(begin_list->data, data_ref) == 0)
+			(*f)(begin_list->data);
 		begin_list = begin_list->next;
 	}
 }

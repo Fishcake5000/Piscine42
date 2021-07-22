@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   ft_helper.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 19:47:37 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 19:51:05 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/18 18:00:43 by aberger           #+#    #+#             */
+/*   Updated: 2021/07/18 18:00:45 by aberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_list.h"
-
-t_list	*ft_create_elem(void *data)
-{
-	t_list	*new;
-
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->data = data;
-	new->next = NULL;
-	return (new);
-}
+#ifndef FT_HELPER_H
+# define FT_HELPER_H
+int	ft_is_whitespace(char c);
+int	ft_strlen(char *str);
+#endif

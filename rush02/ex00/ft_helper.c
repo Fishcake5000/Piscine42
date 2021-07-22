@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_foreach_if.c                               :+:      :+:    :+:   */
+/*   ft_helper.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aberger <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/19 10:19:40 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/19 10:23:35 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/18 18:00:28 by aberger           #+#    #+#             */
+/*   Updated: 2021/07/18 18:00:35 by aberger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *),
-			void *data_ref, int(*cmp)())
+int	ft_is_whitespace(char c)
 {
-	while (begin_list)
-	{
-		if ((*cmp)(begin_list->data, data_ref) == 0)
-			(*f)(begin_list->data);
-		begin_list = begin_list->next;
-	}
+	return (c == ' ' || (c >= 9 && c <= 13));
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

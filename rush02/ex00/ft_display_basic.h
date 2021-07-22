@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_front.c                               :+:      :+:    :+:   */
+/*   ft_display_basic.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bnicolas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 19:54:28 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 19:59:27 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/18 16:11:36 by bnicolas          #+#    #+#             */
+/*   Updated: 2021/07/18 16:34:07 by bnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-void	ft_list_push_front(t_list **begin_list, void *data)
-{
-	t_list	*save;
-
-	save = *begin_list;
-	*begin_list = ft_create_elem(data);
-	(*begin_list)->next = save;
-}
+#ifndef FT_DISPLAY_BASIC_H
+# define FT_DISPLAY_BASIC_H
+# include <unistd.h>
+void	ft_putstr(char *str);
+int		ft_count_str(char **str_arr);
+int		ft_strcmp(char *str1, char *str2);
+int		ft_print_dict_error(void);
+#endif

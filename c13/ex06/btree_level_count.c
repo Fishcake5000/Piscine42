@@ -10,6 +10,6 @@ int	btree_level_count(t_btree *root)
 	size_left = btree_level_count(root->left);
 	size_right = btree_level_count(root->right);
 	if (size_left >= size_right)
-		return (size_left);
-	return (size_right);
+		return (size_left + 1);
+	return (size_right + 1);
 }

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_file_basic.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 20:09:50 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 20:14:38 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/18 17:55:42 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/18 17:55:43 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-void	ft_list_push_back(t_list **begin_list, void *data)
-{
-	t_list	*link;
-
-	if (!*begin_list)
-	{
-		*begin_list = ft_create_elem(data);
-		return ;
-	}
-	link = *begin_list;
-	while (link->next)
-		link = link->next;
-	link->next = ft_create_elem(data);
-}
+#ifndef FT_FILE_BASIC_H
+# define FT_FILE_BASIC_H
+# include <stdlib.h>
+# include "ft_helper.h"
+# include "ft.h"
+t_translation	ft_empty_struct(void);
+char			*ft_clean_num(char *buff, int size);
+char			*ft_clean_text(char *buff, int size);
+#endif

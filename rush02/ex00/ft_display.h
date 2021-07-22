@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   ft_display.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marnaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/18 20:53:16 by marnaudy          #+#    #+#             */
-/*   Updated: 2021/07/18 20:56:26 by marnaudy         ###   ########.fr       */
+/*   Created: 2021/07/18 17:55:13 by marnaudy          #+#    #+#             */
+/*   Updated: 2021/07/18 17:55:15 by marnaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (i < nbr && begin_list)
-	{
-		begin_list = begin_list->next;
-		i++;
-	}
-	return (begin_list);
-}
+#ifndef FT_DISPLAY_H
+# define FT_DISPLAY_H
+# include <stdlib.h>
+# include "ft.h"
+# include "ft_display_basic.h"
+char	*find_in_dict(char *s, t_translation *dictarr);
+char	**translation(char **num, t_translation *dictarr);
+int		affichage(char **num, t_translation *dictarr);
+#endif
